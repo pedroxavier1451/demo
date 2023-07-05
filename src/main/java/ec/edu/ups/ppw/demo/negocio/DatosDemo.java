@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.List;
 
 import ec.edu.ups.ppw.demo.datos.ClienteDAO;
+import ec.edu.ups.ppw.demo.datos.DetalleFacturaDAO;
+import ec.edu.ups.ppw.demo.datos.FacturaDAO;
 import ec.edu.ups.ppw.demo.datos.LugarDAO;
 import ec.edu.ups.ppw.demo.datos.TicketDAO;
 import ec.edu.ups.ppw.demo.datos.VehiculoDAO;
@@ -33,6 +35,12 @@ public class DatosDemo {
 	
 	@Inject
 	private TicketDAO daoTicket;
+	
+	@Inject
+	private DetalleFacturaDAO daoDetalleFactura;
+	
+	@Inject
+	private FacturaDAO daoFactura;
 	
 	@PostConstruct
 	public void init() {
@@ -122,15 +130,22 @@ public class DatosDemo {
 		daoTicket.insert(t);
 		
 		FacturaDetalle d = new FacturaDetalle();
-		FacturaDetalle d2 = new FacturaDetalle();
-		FacturaDetalle d3 = new FacturaDetalle();
 		
+		d.setPrecio(10);
+		d.setServicio("Parqueo");
+		d.setTicket(t);
 		
+		daoDetalleFactura.insert(d);
 		
-		Factura f2 = new Factura();
-		Factura f3 = new Factura();
+		Factura f = new Factura();
 		
+		f.setCliente(c);
+		f.setFecha(new Date());
+		f.setNumero("028342932");
+		f.setTotal(20);
+		f.setFacturaDetalle(d);
 		
+		daoFactura.insert(f);
 		
 		/*
 		List<Cliente> lista;

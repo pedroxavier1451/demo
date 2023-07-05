@@ -62,5 +62,7 @@ public class FacturaDetalle {
 		return "FacturaDetalle [codigo=" + codigo + ", servicio=" + servicio + ", precio=" + precio + ", ticket="
 				+ ticket + "]";
 	}
+
+	
 	
 }

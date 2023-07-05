@@ -81,9 +81,27 @@ public class Factura {
 		this.cliente = cliente;
 	}
 
+	public FacturaDetalle getFacturaDetalle() {
+		return facturaDetalle;
+	}
+
+	public void setFacturaDetalle(FacturaDetalle facturaDetalle) {
+		this.facturaDetalle = facturaDetalle;
+	}
+
+	public List<FacturaDetalle> getDetalles() {
+		return detalles;
+	}
+
+	public void setDetalles(List<FacturaDetalle> detalles) {
+		this.detalles = detalles;
+	}
+
 	@Override
 	public String toString() {
 		return "Factura [codigo=" + codigo + ", numero=" + numero + ", fecha=" + fecha + ", total=" + total
-				+ ", cliente=" + cliente + "]";
+				+ ", cliente=" + cliente + ", facturaDetalle=" + facturaDetalle + ", detalles=" + detalles + "]";
 	}
+
+	
 }
