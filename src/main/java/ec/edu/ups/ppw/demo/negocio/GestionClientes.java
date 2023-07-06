@@ -29,7 +29,7 @@ public class GestionClientes {
 	}
 	
 	private boolean isCodigoValido(int idCliente) {
-		return idCliente == 0;
+		return idCliente != 0;
 	}
 	
 	
