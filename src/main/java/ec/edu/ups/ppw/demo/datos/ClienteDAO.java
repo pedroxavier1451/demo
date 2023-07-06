@@ -7,12 +7,18 @@ import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
 
 @Stateless
 public class ClienteDAO {
 	
 	@PersistenceContext
 	private EntityManager em;
+	
+	public void setEntityManager(EntityManager em) {
+        this.em = em;
+    }
+	
 	
 	public void insert(Cliente cliente) {
 		em.persist(cliente);
@@ -32,9 +38,16 @@ public class ClienteDAO {
 		em.remove(c);
 	}
 	
-	public List<Cliente> getAll(){
-		String jpql = "SELECT c FROM Cliente c";
+	/*public List<Cliente> getAll(){
+		String jpql = "SELECT c FROM cliente c";
 		Query q = em.createQuery(jpql);
 		return q.getResultList();
-	}
+	}*/
+	
+	public List<Cliente> getAll() {
+        String jpql = "SELECT c FROM Cliente c";
+        TypedQuery<Cliente> query = em.createQuery(jpql, Cliente.class);
+        return query.getResultList();
+    }
+
 }

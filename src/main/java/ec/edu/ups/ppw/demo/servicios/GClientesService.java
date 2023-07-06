@@ -1,6 +1,14 @@
 package ec.edu.ups.ppw.demo.servicios;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import ec.edu.ups.ppw.demo.datos.ClienteDAO;
 import ec.edu.ups.ppw.demo.modelo.Cliente;
+import jakarta.inject.Inject;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
@@ -9,6 +17,13 @@ import jakarta.ws.rs.QueryParam;
 
 @Path("clientes")
 public class GClientesService {
+	
+	
+	@Inject
+	private ClienteDAO clidao;
+	
+	@Inject
+	private ClienteDAO cd;
 
 	@GET
 	@Path("saludo")
@@ -38,5 +53,33 @@ public class GClientesService {
 		return c;
 	}
 	
+
+	@GET
+	@Path("cli")
+	@Produces("application/json")
+	public String datos() {
+	    return clidao.getAll().toString();
+	}
 	
+	@GET
+	@Path("clienteslista")
+	@Produces("application/json")
+	public String datos2() {
+	    List<Cliente> clientes = cd.getAll();
+	    StringBuilder sb = new StringBuilder();
+
+	    for (Cliente cliente : clientes) {
+	        sb.append("--------------------------------------------------------").append("\n").
+	        	 append("ID: ").append(cliente.getIdCliente()).append("\n")
+	            .append("Cedula: ").append(cliente.getCedula()).append("\n")
+	            .append("Nombre: ").append(cliente.getNombre()).append("\n")
+	            .append("Apellido: ").append(cliente.getApellido()).append("\n")
+	            .append("Fecha de Registro: ").append(cliente.getFechaRegistro()).append("\n")
+	            .append("\n");
+	    }
+
+	    String result = sb.toString();
+	    System.out.print(result);
+	    return result;
+	}
 }
