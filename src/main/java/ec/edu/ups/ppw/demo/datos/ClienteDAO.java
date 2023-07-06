@@ -49,5 +49,4 @@ public class ClienteDAO {
         TypedQuery<Cliente> query = em.createQuery(jpql, Cliente.class);
         return query.getResultList();
     }
-
 }
