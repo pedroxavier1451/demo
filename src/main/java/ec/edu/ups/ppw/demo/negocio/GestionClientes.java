@@ -14,7 +14,7 @@ public class GestionClientes {
 	
 	public void guardarClientes(Cliente cliente) throws Exception {
 		if(!this.isCodigoValido(cliente.getIdCliente()))
-			throw new Exception("Codigo Incorrecta");
+			throw new Exception("Codigo Incorrecto");
 		
 		if(daoCliente.read(cliente.getIdCliente()) == null) {
 			try {

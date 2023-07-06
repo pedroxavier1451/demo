@@ -55,21 +55,21 @@ public class DatosDemo {
 		c.setApellido("Orellana");
 		c.setFechaRegistro(new Date());
 		
-		daoCliente.insert(c);
+		//daoCliente.insert(c);
 		
 		c2.setCedula("0125375013");
 		c2.setNombre("Juan");
 		c2.setApellido("Lopez");
 		c2.setFechaRegistro(new Date());
 		
-		daoCliente.insert(c2);
+		//daoCliente.insert(c2);
 		
 		c3.setCedula("0142684259");
 		c3.setNombre("Miguel");
 		c3.setApellido("Andrade");
 		c3.setFechaRegistro(new Date());
 		
-		daoCliente.insert(c3);
+		//daoCliente.insert(c3);
 		
 		Lugar l = new Lugar();
 		Lugar l2 = new Lugar();
@@ -78,17 +78,17 @@ public class DatosDemo {
 		l.setNroPiso(1);
 		l.setNroLugar(5);
 		
-		daoLugar.insert(l);
+		//daoLugar.insert(l);
 		
 		l2.setNroPiso(2);
 		l2.setNroLugar(16);
 		
-		daoLugar.insert(l2);
+		//daoLugar.insert(l2);
 		
 		l3.setNroPiso(3);
 		l3.setNroLugar(20);
 		
-		daoLugar.insert(l3);
+		//daoLugar.insert(l3);
 		
 		Vehiculo v = new Vehiculo();
 		Vehiculo v2 = new Vehiculo();
@@ -99,21 +99,21 @@ public class DatosDemo {
 		v.setMarca("Toyota");
 		v.setModelo("Fortuner");
 		
-		daoVehiculo.insert(v);
+		//daoVehiculo.insert(v);
 		
 		v2.setPlaca("GFQ-65");
 		v2.setColor("Azul");
 		v2.setMarca("Chevrolet");
 		v2.setModelo("Spark");
 		
-		daoVehiculo.insert(v2);
+		//daoVehiculo.insert(v2);
 		
 		v3.setPlaca("PKI-24");
 		v3.setColor("Negro");
 		v3.setMarca("Suzuki");
 		v3.setModelo("Vitara");
 		
-		daoVehiculo.insert(v3);
+		//daoVehiculo.insert(v3);
 		
 		Ticket t = new Ticket();
 		Ticket t2 = new Ticket();
@@ -127,7 +127,7 @@ public class DatosDemo {
 		t.setLugar(l);
 		t.setVehiculo(v);
 		
-		daoTicket.insert(t);
+		//daoTicket.insert(t);
 		
 		FacturaDetalle d = new FacturaDetalle();
 		
@@ -135,7 +135,7 @@ public class DatosDemo {
 		d.setServicio("Parqueo");
 		d.setTicket(t);
 		
-		daoDetalleFactura.insert(d);
+		//daoDetalleFactura.insert(d);
 		
 		Factura f = new Factura();
 		
@@ -145,7 +145,7 @@ public class DatosDemo {
 		f.setTotal(20);
 		f.setFacturaDetalle(d);
 		
-		daoFactura.insert(f);
+		//daoFactura.insert(f);
 		
 		/*
 		List<Cliente> lista;
