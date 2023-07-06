@@ -9,14 +9,20 @@ import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
+import jakarta.ws.rs.core.Response;
 
 @Path("clientes")
 public class GClientesService {
+	
+	@Inject
+	private GClientesService gestionCliente;
 	
 	
 	@Inject
@@ -24,6 +30,8 @@ public class GClientesService {
 	
 	@Inject
 	private ClienteDAO cd;
+	
+	//el GET nos ayuda a solamente realizar consultas hacia la base de datos
 
 	@GET
 	@Path("saludo")
@@ -82,4 +90,38 @@ public class GClientesService {
 	    System.out.print(result);
 	    return result;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//para insertar informacion en este caso de tipo perosna
+	//utilizamos el pad de POST para realizar la insercicion
+	
 }
