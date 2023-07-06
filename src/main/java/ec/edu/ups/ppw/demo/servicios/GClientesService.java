@@ -23,12 +23,7 @@ import jakarta.ws.rs.core.Response;
 public class GClientesService {
 	
 	@Inject
-<<<<<<< HEAD
 	private GestionClientes gestionClientes;
-=======
-	private GClientesService gestionCliente;
-	
->>>>>>> 0c3ef083539711ba738901eff0fcc50c7e251b63
 	
 	@Inject
 	private ClienteDAO clidao;
@@ -96,7 +91,6 @@ public class GClientesService {
 	    return result;
 	}
 	
-<<<<<<< HEAD
 	@POST
 	@Produces("application/json")
 	@Consumes("application/json")
@@ -112,39 +106,4 @@ public class GClientesService {
 			return Response.status(Response.Status.OK).entity(error).build();
 		}
 	}
-=======
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	//para insertar informacion en este caso de tipo perosna
-	//utilizamos el pad de POST para realizar la insercicion
-	
->>>>>>> 0c3ef083539711ba738901eff0fcc50c7e251b63
 }
