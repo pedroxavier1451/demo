@@ -22,10 +22,6 @@ import jakarta.ws.rs.core.Response;
 public class GClientesService {
 	
 	@Inject
-	private GClientesService gestionCliente;
-	
-	
-	@Inject
 	private ClienteDAO clidao;
 	
 	@Inject
@@ -90,38 +86,5 @@ public class GClientesService {
 	    System.out.print(result);
 	    return result;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	//para insertar informacion en este caso de tipo perosna
-	//utilizamos el pad de POST para realizar la insercicion
 	
 }
