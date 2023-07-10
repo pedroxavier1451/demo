@@ -22,14 +22,17 @@ public class GestionClientes {
 			}catch(Exception e){
 				throw new Exception("Error al insertar: "+ e.getMessage());
 			}
-			daoCliente.insert(cliente);
 		}else {
-			daoCliente.update(cliente);
+			try {
+				daoCliente.update(cliente);
+			}catch (Exception e) {
+				throw new Exception("Error al actualizar: "+ e.getMessage());
+			}
 		}
 	}
 	
 	private boolean isCodigoValido(int idCliente) {
-		return idCliente != 0;
+		return idCliente == 0 || idCliente != 0;
 	}
 	
 	
