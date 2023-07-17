@@ -106,4 +106,12 @@ public class GClientesService {
 			return Response.status(Response.Status.OK).entity(error).build();
 		}
 	}
+	
+	@GET
+	@Path("all")
+	@Produces("application/json")
+	public Response getClientes() {
+		List<Cliente> listado = gestionClientes.getClientes();
+		return Response.status(Response.Status.OK).entity(listado).build();
+	}
 }
