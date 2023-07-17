@@ -1,8 +1,6 @@
 package ec.edu.ups.ppw.demo.negocio;
 
 
-import java.util.List;
-
 import ec.edu.ups.ppw.demo.datos.ClienteDAO;
 import ec.edu.ups.ppw.demo.modelo.Cliente;
 import jakarta.ejb.Stateless;
@@ -35,10 +33,6 @@ public class GestionClientes {
 	
 	private boolean isCodigoValido(int idCliente) {
 		return idCliente == 0 || idCliente != 0;
-	}
-	
-	public List <Cliente> getClientes(){
-		return daoCliente.getAll();
 	}
 	
 	
