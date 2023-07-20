@@ -11,6 +11,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
@@ -114,4 +115,21 @@ public class GClientesService {
 		List<Cliente> listado = gestionClientes.getClientes();
 		return Response.status(Response.Status.OK).entity(listado).build();
 	}
+	
+	
+	@DELETE
+	@Path("delete/{id}")
+	public Response eliminarCliente(@PathParam("id") int id ) {
+		try {
+			gestionClientes.eliminar(id);
+			return Response.status(Response.Status.OK).build();
+		} catch (Exception e) {
+			//return Response.status(Response.Status.NOT_FOUND).build();
+			var error = new Error();
+			error.setCodigo(98);
+			error.setMensaje("Error al eliminar: "+e.getMessage());
+			return Response.status(Response.Status.OK).entity(error).build();
+		}
+	}
+	
 }
