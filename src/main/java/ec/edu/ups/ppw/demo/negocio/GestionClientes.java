@@ -1,6 +1,7 @@
 package ec.edu.ups.ppw.demo.negocio;
 
 
+import java.util.Date;
 import java.util.List;
 
 import ec.edu.ups.ppw.demo.datos.ClienteDAO;
@@ -35,6 +36,10 @@ public class GestionClientes {
 	
 	private boolean isCodigoValido(int idCliente) {
 		return idCliente == 0 || idCliente != 0;
+	}
+	
+	public void guardarClientes(int idCliente, String cedula, String nombre, String apellido, Date fechaRegistro) {
+		
 	}
 	
 	public List <Cliente> getClientes(){
