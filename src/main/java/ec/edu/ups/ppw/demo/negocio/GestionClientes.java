@@ -46,5 +46,10 @@ public class GestionClientes {
 		return daoCliente.getAll();
 	}
 	
+	public void eliminar(int id) {
+		daoCliente.delete(id);
+	}
+
+	
 
 }
